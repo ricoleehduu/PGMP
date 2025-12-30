@@ -6,9 +6,8 @@
 [![SOTA](https://img.shields.io/badge/SOTA-Yes-brightgreen.svg)]()
 
 > **Physically-Grounded Manifold Projection Model for Generalizable Metal Artifact Reduction in Dental CBCT**  
-> *First Author, Second Author, et al.*  
-> Accepted by **[Journal Name/Conference]** (2025)
-
+> *Zhi Li\*, Yaqi Wang\*, Bingtao Ma, Yifan Zhang, Huiyu Zhou, Shuai Wang*  
+> (\* Equal Contribution)  
 ---
 
 ## 📖 Introduction
@@ -67,23 +66,24 @@ $$ \mathcal{L}_{total} = \|\hat{x} - x_{gt}\|_1 + \lambda_{SSA} \mathcal{L}_{SSA
 git clone https://github.com/yourusername/PGMP-MAR.git
 cd PGMP-MAR
 pip install -r requirements.txt
-2. Data Preparation
+```
+### 2. Data Preparation
 Download the STS24 dataset or use your own CBCT volumes.
-code
-Bash
+```bash
 # Generate AAPS synthetic data (Physics Simulation)
 python data/generate_aaps.py --source_path ./STS24 --output_path ./data/train
-3. Training
+```
+### 3. Training
 Train the DMP-Former with MedDINOv3 guidance.
-code
-Bash
+``` bash
 python train.py --config configs/pgmp_train.yaml
-4. Inference (Demo)
-Run MAR on a clinical sample.
-code
-Bash
+```
+### 4. Inference (Demo)
+Run MAR on a clinical sample
+```bash
 python inference.py --checkpoint weights/pgmp_best.pth --input assets/clinical_sample.dcm
-🖼️ Gallery
+```
+##  🖼️ Gallery
 Clinical Generalization
 Comparison on real-world clinical data (Zero-shot). Note the preservation of trabecular bone texture in our result.
 <p align="center">
@@ -94,3 +94,18 @@ PGMP significantly improves the accuracy of automated tooth segmentation (Dice +
 <p align="center">
 <img src="assets/segmentation.png" width="800">
 </p>
+
+## 📝 Citation
+
+If you find this project useful for your research, please consider citing:
+
+```bibtex
+@article{Li2025PGMP,
+  title={Physically-Grounded Manifold Projection Model for Generalizable Metal Artifact Reduction in Dental CBCT},
+  author={Li, Zhi and Wang, Yaqi and Ma, Bingtao and Zhang, Yifan and Zhou, Huiyu and Wang, Shuai},
+  journal={arXiv preprint arXiv:2025.xxxxx}, 
+  year={2025}
+}
+
+## 📧 Contact
+For questions or collaboration, please contact Shuai Wang at zhi.li@hdu.edu.cn .
