@@ -86,9 +86,6 @@ python inference.py --checkpoint weights/pgmp_best.pth --input assets/clinical_s
 ##  🖼️ Gallery
 Clinical Generalization
 Comparison on real-world clinical data (Zero-shot). Note the preservation of trabecular bone texture in our result.
-<p align="center">
-<img src="assets/results_clinical.png" width="800">
-</p>
 Downstream Task (Segmentation)
 PGMP significantly improves the accuracy of automated tooth segmentation (Dice +5.4% in Maxilla).
 <p align="center">
@@ -106,6 +103,7 @@ If you find this project useful for your research, please consider citing:
   journal={arXiv preprint arXiv:2025.xxxxx}, 
   year={2025}
 }
+```
 
 ## 📧 Contact
 For questions or collaboration, please contact Shuai Wang at zhi.li@hdu.edu.cn .
